@@ -1,0 +1,316 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local tps = game:GetService("TeleportService")
+local storage = game.ReplicatedStorage
+local player = game.Players.LocalPlayer
+local TRXHUB = Instance.new("ScreenGui")
+local main = Instance.new("ImageLabel")
+local line = Instance.new("Frame")
+local scripthub = Instance.new("TextButton")
+local friends = Instance.new("TextButton")
+local logo = Instance.new("ImageLabel")
+local username = Instance.new("TextLabel")
+local destroy = Instance.new("TextButton")
+local open = Instance.new("ImageButton")
+local friendsframe = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+local a = Instance.new("TextButton")
+local friendlist = Instance.new("Frame")
+local name = Instance.new("TextLabel")
+local game = Instance.new("TextLabel")
+local join = Instance.new("TextButton")
+local avatar = Instance.new("ImageLabel")
+local hublist = Instance.new("ScrollingFrame")
+local hours = Instance.new("ImageButton")
+local TextLabel = Instance.new("TextLabel")
+local a_2 = Instance.new("TextButton")
+
+--Properties:
+
+TRXHUB.Name = "TRXHUB"
+TRXHUB.Parent = player.PlayerGui
+TRXHUB.Enabled = true
+
+main.Name = "main"
+main.Parent = TRXHUB
+main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+main.BackgroundTransparency = 1.000
+main.Position = UDim2.new(0.442390949, 0, 0.955555558, 0)
+main.Size = UDim2.new(0, 315, 0, 38)
+main.Image = "rbxassetid://3570695787"
+main.ImageColor3 = Color3.fromRGB(29, 29, 29)
+main.ScaleType = Enum.ScaleType.Slice
+main.SliceCenter = Rect.new(100, 100, 100, 100)
+main.SliceScale = 0.120
+
+line.Name = "line"
+line.Parent = main
+line.BackgroundColor3 = Color3.fromRGB(212, 212, 212)
+line.BackgroundTransparency = 1.000
+line.Position = UDim2.new(0, 0, 0.0999996811, 0)
+line.Size = UDim2.new(0, 501, 0, 4)
+
+scripthub.Name = "scripthub"
+scripthub.Parent = line
+scripthub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+scripthub.BackgroundTransparency = 1.000
+scripthub.Position = UDim2.new(0.0179640651, 0, 0.25, 0)
+scripthub.Size = UDim2.new(0, 115, 0, 28)
+scripthub.Font = Enum.Font.SourceSans
+scripthub.Text = "SCRIPT HUB"
+scripthub.TextColor3 = Color3.fromRGB(255, 255, 255)
+scripthub.TextScaled = true
+scripthub.TextSize = 14.000
+scripthub.TextWrapped = true
+
+friends.Name = "friends"
+friends.Parent = line
+friends.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+friends.BackgroundTransparency = 1.000
+friends.Position = UDim2.new(0.378854483, 0, 0.25, 0)
+friends.Size = UDim2.new(0, 109, 0, 28)
+friends.Font = Enum.Font.SourceSans
+friends.Text = "FRIENDS"
+friends.TextColor3 = Color3.fromRGB(255, 255, 255)
+friends.TextScaled = true
+friends.TextSize = 14.000
+friends.TextWrapped = true
+
+logo.Name = "logo"
+logo.Parent = line
+logo.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+logo.Position = UDim2.new(0.0187202487, 0, -15.5, 0)
+logo.Size = UDim2.new(0, 55, 0, 51)
+logo.Image = "rbxassetid://9338003795"
+
+username.Name = "username"
+username.Parent = line
+username.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+username.BackgroundTransparency = 1.000
+username.Position = UDim2.new(0.141684756, 0, -12.5, 0)
+username.Size = UDim2.new(0, 462, 0, 30)
+username.Font = Enum.Font.Nunito
+username.Text = "TRXHUB"
+username.TextColor3 = Color3.fromRGB(255, 255, 255)
+username.TextScaled = true
+username.TextSize = 14.000
+username.TextWrapped = true
+username.TextXAlignment = Enum.TextXAlignment.Left
+
+destroy.Name = "destroy"
+destroy.Parent = line
+destroy.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+destroy.BackgroundTransparency = 1.000
+destroy.BorderSizePixel = 0
+destroy.Position = UDim2.new(0.652694643, 0, -0.439697266, 0)
+destroy.Size = UDim2.new(0, 132, 0, 30)
+destroy.Font = Enum.Font.SourceSans
+destroy.Text = "Destroy Gui"
+destroy.TextColor3 = Color3.fromRGB(255, 255, 255)
+destroy.TextScaled = true
+destroy.TextSize = 14.000
+destroy.TextWrapped = true
+
+open.Name = "open"
+open.Parent = TRXHUB
+open.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+open.BackgroundTransparency = 1.000
+open.Position = UDim2.new(0.0067743659, 0, 0.555555522, 0)
+open.Size = UDim2.new(0, 81, 0, 81)
+open.Visible = false
+open.Image = "rbxassetid://9338003795"
+
+friendsframe.Name = "friendsframe"
+friendsframe.Parent = TRXHUB
+friendsframe.Active = true
+friendsframe.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+friendsframe.BorderSizePixel = 0
+friendsframe.Position = UDim2.new(0.0328295901, 0, 0.362962961, 0)
+friendsframe.Size = UDim2.new(0, 313, 0, 659)
+friendsframe.Visible = false
+
+UIListLayout.Parent = friendsframe
+
+a.Name = "a"
+a.Parent = friendsframe
+a.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+a.BackgroundTransparency = 1.000
+a.Size = UDim2.new(0, 299, 0, 28)
+a.Font = Enum.Font.SourceSans
+a.Text = "CLOSE"
+a.TextColor3 = Color3.fromRGB(255, 255, 255)
+a.TextScaled = true
+a.TextSize = 14.000
+a.TextWrapped = true
+
+friendlist.Name = "friendlist"
+friendlist.Parent = storage
+friendlist.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+friendlist.BorderSizePixel = 0
+friendlist.Size = UDim2.new(0, 300, 0, 70)
+
+name.Name = "name"
+name.Parent = friendlist
+name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+name.BackgroundTransparency = 1.000
+name.Position = UDim2.new(0.25, 0, 0, 0)
+name.Size = UDim2.new(0, 225, 0, 32)
+name.Font = Enum.Font.SourceSans
+name.Text = "NAME"
+name.TextColor3 = Color3.fromRGB(255, 255, 255)
+name.TextSize = 25.000
+name.TextXAlignment = Enum.TextXAlignment.Left
+
+game.Name = "game"
+game.Parent = friendlist
+game.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+game.BackgroundTransparency = 1.000
+game.Position = UDim2.new(0.25, 0, 0.400000006, 0)
+game.Size = UDim2.new(0, 225, 0, 19)
+game.Font = Enum.Font.SourceSans
+game.Text = "NAME"
+game.TextColor3 = Color3.fromRGB(255, 255, 255)
+game.TextSize = 20.000
+game.TextXAlignment = Enum.TextXAlignment.Left
+
+join.Name = "join"
+join.Parent = friendlist
+join.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+join.BackgroundTransparency = 1.000
+join.Position = UDim2.new(0.671149075, 0, 0.671428561, 0)
+join.Size = UDim2.new(0, 98, 0, 23)
+join.Font = Enum.Font.PermanentMarker
+join.Text = "JOIN"
+join.TextColor3 = Color3.fromRGB(255, 255, 255)
+join.TextScaled = true
+join.TextSize = 14.000
+join.TextWrapped = true
+
+avatar.Name = "avatar"
+avatar.Parent = friendlist
+avatar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+avatar.BorderSizePixel = 0
+avatar.Size = UDim2.new(0, 75, 0, 70)
+avatar.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+
+hublist.Name = "hublist"
+hublist.Parent = TRXHUB
+hublist.Active = true
+hublist.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+hublist.BorderSizePixel = 0
+hublist.Position = UDim2.new(0.40854612, 0, 0.647515953, 0)
+hublist.Size = UDim2.new(0, 496, 0, 246)
+hublist.Visible = false
+
+hours.Name = "hours"
+hours.Parent = hublist
+hours.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+hours.BackgroundTransparency = 1.000
+hours.BorderSizePixel = 0
+hours.Position = UDim2.new(0.0187969916, 0, 0.00601851847, 0)
+hours.Size = UDim2.new(0, 100, 0, 100)
+hours.Image = "rbxassetid://9337945172"
+hours.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/DxnizA/Scripts/main/Hours"))()
+end)
+
+TextLabel.Parent = hours
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0, 0, 1, 0)
+TextLabel.Size = UDim2.new(0, 100, 0, 22)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "HOURS"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+a_2.Name = "a"
+a_2.Parent = hublist
+a_2.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+a_2.BorderSizePixel = 0
+a_2.Position = UDim2.new(0.239601016, 0, 0, 0)
+a_2.Size = UDim2.new(0, 299, 0, 19)
+a_2.Font = Enum.Font.SourceSans
+a_2.Text = "CLOSE"
+a_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+a_2.TextScaled = true
+a_2.TextSize = 14.000
+a_2.TextWrapped = true
+
+-- Scripts:
+
+local function RCHM_fake_script() -- scripthub.open 
+	local script = Instance.new('LocalScript', scripthub)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		hublist.Visible = true
+	end)
+end
+coroutine.wrap(RCHM_fake_script)()
+local function ANTW_fake_script() -- friends.open 
+	local script = Instance.new('LocalScript', friends)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		friendsframe.Visible = true
+	end)
+end
+coroutine.wrap(ANTW_fake_script)()
+local function XVPCBZ_fake_script() -- username.get 
+	local script = Instance.new('LocalScript', username)
+	
+	script.Parent.Text = player.Name
+end
+coroutine.wrap(XVPCBZ_fake_script)()
+local function PENUK_fake_script() -- destroy.script 
+	local script = Instance.new('LocalScript', destroy)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(PENUK_fake_script)()
+local function KGNOZFS_fake_script() -- open.open 
+	local script = Instance.new('LocalScript', open)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Visible = false
+		script.Parent.Parent.main.Visible = true
+	end)
+end
+coroutine.wrap(KGNOZFS_fake_script)()
+local function URGG_fake_script() -- TRXHUB.friendz 
+	local script = Instance.new('LocalScript', TRXHUB)
+	local friends = player:GetFriendsOnline(20)
+	
+	for i,v in pairs(friends) do
+		local newframe = friendlist:Clone()
+		newframe.name.Text = v.UserName
+		newframe.game.Text = v.LastLocation
+		newframe.Parent = player.PlayerGui.TRXHUB.friendsframe
+		newframe.join.MouseButton1Click:Connect(function()
+			tps:TeleportToPlaceInstance(v.PlaceId, v.GameId, player)
+	    end)
+	end
+end
+coroutine.wrap(URGG_fake_script)()
+local function ASLCAQ_fake_script() -- a.close 
+	local script = Instance.new('LocalScript', a)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		player.PlayerGui.TRXHUB.friendsframe.Visible = false
+	end)
+end
+coroutine.wrap(ASLCAQ_fake_script)()
+local function ZQMKPHW_fake_script() -- a_2.close 
+	local script = Instance.new('LocalScript', a_2)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		player.PlayerGui.TRXHUB.hublist.Visible = false
+	end)
+end
+coroutine.wrap(ZQMKPHW_fake_script)()
